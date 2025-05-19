@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: graditude_inertia_development
@@ -79,11 +78,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  url: <%= ENV['DATABASE_URL'] %>
   primary: &primary_production
     <<: *default
-    database: graditude_inertia_production
-    username: graditude_inertia
-    password: <%= ENV["GRADITUDE_INERTIA_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: graditude_inertia_production_cache
