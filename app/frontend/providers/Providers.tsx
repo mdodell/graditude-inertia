@@ -1,8 +1,9 @@
-import { ReactNode } from 'react'
-import { ThemeProvider } from './ThemeProvider'
+import { ReactNode } from 'react';
+
+import { ThemeProvider } from './ThemeProvider';
 
 interface ProvidersProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export function Providers({ children }: ProvidersProps) {
@@ -17,9 +18,7 @@ export function Providers({ children }: ProvidersProps) {
         </AuthProvider>
       </ThemeProvider>
       */}
-      <ThemeProvider>
-        {children}
-      </ThemeProvider>
+      <ThemeProvider>{children}</ThemeProvider>
     </>
-  )
-} 
+  );
+}

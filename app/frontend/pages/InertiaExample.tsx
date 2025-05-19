@@ -1,19 +1,19 @@
-import { Head } from '@inertiajs/react'
-import { useState } from 'react'
+import { useState } from 'react';
+import { Head } from '@inertiajs/react';
+import { Button } from '@mantine/core';
 
-import inertiaSvg from '/assets/inertia.svg'
-import reactSvg from '/assets/react.svg'
-import viteRubySvg from '/assets/vite_ruby.svg'
+import cs from './InertiaExample.module.css';
 
-import cs from './InertiaExample.module.css'
-import { Button } from '@mantine/core'
+import inertiaSvg from '/assets/inertia.svg';
+import reactSvg from '/assets/react.svg';
+import viteRubySvg from '/assets/vite_ruby.svg';
 
 export default function InertiaExample({ name }: { name: string }) {
   return (
     <>
       <Head title="Inertia + Vite Ruby + React Example" />
 
-     <Button>Hello World!</Button>
+      <Button>Hello World!</Button>
     </>
-  )
+  );
 }
