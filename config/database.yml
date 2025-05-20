@@ -84,7 +84,6 @@ production:
     database: <%= ENV["POSTGRES_DB"] %>
     password: <%= ENV["POSTGRES_PASSWORD"] %>
     host: <%= ENV["DB_HOST"] %>
-    port: <%= ENV["DB_PORT"] %>
   primary:
     <<: *production_defaults
   cache:

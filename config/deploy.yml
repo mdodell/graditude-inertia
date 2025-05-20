@@ -39,9 +39,9 @@ env:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
     SOLID_QUEUE_IN_PUMA: true
-    DB_HOST: postgres
-    POSTGRES_USER: graditude
-    POSTGRES_DB: graditude_production
+    DB_HOST: graditude_inertia-postgres
+    POSTGRES_USER: graditude_inertia
+    POSTGRES_DB: graditude_inertia_production
 
     # Set number of processes dedicated to Solid Queue (default: 1)
     # JOB_CONCURRENCY: 3
