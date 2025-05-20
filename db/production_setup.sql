@@ -1,0 +1,4 @@
+CREATE DATABASE graditude_inertia_production;
+CREATE DATABASE graditude_inertia_production_cache;
+CREATE DATABASE graditude_inertia_production_queue;
+CREATE DATABASE graditude_inertia_production_cable;

@@ -35,7 +35,7 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
-    - POSTGRES_PASSWORD
+    - DATABASE_URL
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
@@ -82,15 +82,20 @@ builder:
 accessories:
   postgres:
     image: postgres:15
-    host: 45.55.150.252 # The IP you want the database deployed to
+    host: 45.55.150.252
+    port: '127.0.0.1:5432:5432'
     env:
       clear:
         POSTGRES_USER: graditude_inertia
         POSTGRES_DB: graditude_inertia_production
+        DB_HOST: 127.0.0.1
+        DB_PORT: 5432
       secret:
-        - POSTGRES_PASSWORD # Comes from the .kamal/secrets file
+        - POSTGRES_PASSWORD
     directories:
       - data:/var/lib/postgresql/data
+    files:
+      - db/production_setup.sql:/docker-entrypoint-initdb.d/setup.sql
 
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
