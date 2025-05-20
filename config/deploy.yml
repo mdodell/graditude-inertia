@@ -74,7 +74,6 @@ asset_path: /rails/public/assets
 # Configure the image builder.
 builder:
   arch: amd64
-  multiarch: true
   args:
     BUILDPLATFORM: linux/amd64
     TARGETPLATFORM: linux/amd64
