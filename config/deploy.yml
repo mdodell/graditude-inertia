@@ -35,6 +35,8 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - POSTGRES_PASSWORD
+    - POSTGRES_USER
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
@@ -84,8 +86,8 @@ accessories:
     host: 45.55.150.252 # The IP you want the database deployed to
     env:
       clear:
-        POSTGRES_USER: graditude # Same as above
-        POSTGRES_DB: graditude_production # Same as above
+        POSTGRES_USER: graditude_inertia
+        POSTGRES_DB: graditude_inertia_production
       secret:
         - POSTGRES_PASSWORD # Comes from the .kamal/secrets file
     directories:
